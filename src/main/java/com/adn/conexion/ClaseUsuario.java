@@ -19,7 +19,7 @@ public class ClaseUsuario {
 			   if(con!=null){
 			    Statement st;
 			    st = con.createStatement();
-			    String query= "SELECT CLAVE FROM USUARIOS WHERE USER='"+user+"'";
+			    String query= "SELECT CLAVE FROM USUARIOS WHERE usuarios.USER='"+user+"'";
 			   // 
 			    //st.executeQuery(query);
 			    System.out.println(query);
@@ -151,7 +151,7 @@ public class ClaseUsuario {
 		   if(con!=null){
 		    Statement st;
 		    st = con.createStatement();
-		    String query= "UPDATE USUARIOS SET nombre ='"+usuarioModif.getNombre()+"', correo='"+usuarioModif.getCorreo()+"', personalCargo='"+ usuarioModif.getPersonalCargo()+"', autorizador='"+ usuarioModif.getAutorizador()+"', puesto='"+ usuarioModif.getPuesto()+"', area='"+ usuarioModif.getArea()+"',tipoUsuario='"+usuarioModif.getTipoUsuario()+"',jefeDirecto='"+usuarioModif.getJefeDirecto() +"'  WHERE user = '"+usuarioModif.getUsername()+"'";
+		    String query= "UPDATE USUARIOS SET nombre ='"+usuarioModif.getNombre()+"', correo='"+usuarioModif.getCorreo()+"', personalCargo='"+ usuarioModif.getPersonalCargo()+"', autorizador='"+ usuarioModif.getAutorizador()+"', puesto='"+ usuarioModif.getPuesto()+"', area='"+ usuarioModif.getArea()+"',tipoUsuario='"+usuarioModif.getTipoUsuario()+"',jefeDirecto='"+usuarioModif.getJefeDirecto() +"'  WHERE usuarios.user = '"+usuarioModif.getUsername()+"'";
 		    System.out.println(query);
 		    st.executeUpdate(query);
 		    
@@ -175,7 +175,7 @@ public class ClaseUsuario {
 		   if(con!=null){
 		    Statement st;
 		    st = con.createStatement();
-		    String query=  "SELECT correo FROM USUARIOS WHERE USER='"+verificaRepetido.getUsername()+"'";
+		    String query=  "SELECT correo FROM USUARIOS WHERE usuarios.USER='"+verificaRepetido.getUsername()+"'";
 		   System.out.println(query);// 
 		    
 		    
@@ -218,7 +218,7 @@ public static ArrayList<Object> consultarUsuarioNom(){
 		   if(con!=null){
 		    Statement st;
 		    st = con.createStatement();
-		    String query= "SELECT nombre, user FROM USUARIOS";
+		    String query= "SELECT nombre, usuarios.user FROM USUARIOS";
 		    					// 1       2
 		  System.out.println(query);
 		    resultado = st.executeQuery(query);
@@ -256,7 +256,7 @@ public static boolean eliminaUsuario(String usr){
 			   if(con!=null){
 			    Statement st;
 			    st = con.createStatement();
-			    String query= "UPDATE USUARIOS SET activo ='False' WHERE user = '"+usr+"'";
+			    String query= "UPDATE USUARIOS SET activo ='False' WHERE usuarios.user = '"+usr+"'";
 			    System.out.println(query);
 			    st.executeUpdate(query);
 			    
@@ -290,7 +290,7 @@ public static boolean actualizaPss(Usuario usr){
 				   if(con!=null){
 				    Statement st;
 				    st = con.createStatement();
-				    String query= "UPDATE USUARIOS SET clave ='"+pssw+"' WHERE user = '"+usuario+"'";
+				    String query= "UPDATE USUARIOS SET clave ='"+pssw+"' WHERE usuarios.user = '"+usuario+"'";
 				    System.out.println(query);
 				    st.executeUpdate(query);
 				    
@@ -333,7 +333,7 @@ public static boolean incrementaVisita(Usuario usr){
 				   if(con!=null){
 				    Statement st;
 				    st = con.createStatement();
-				    String query= "UPDATE USUARIOS SET visitas ='"+visitas+"' WHERE user = '"+usuario+"'";
+				    String query= "UPDATE USUARIOS SET visitas ='"+visitas+"' WHERE usuarios.user = '"+usuario+"'";
 				    System.out.println(query);
 				    st.executeUpdate(query);
 				    
@@ -363,7 +363,7 @@ public static String consultaJefeDirecto(String usuario){
 		   if(con!=null){
 		    Statement st;
 		    st = con.createStatement();
-		    String query= "SELECT correo FROM usuarios WHERE idUsuario = (SELECT JefeDirecto FROM usuarios WHERE user = '"+usuario+"')";
+		    String query= "SELECT correo FROM usuarios WHERE idUsuario = (SELECT JefeDirecto FROM usuarios WHERE usuarios.user = '"+usuario+"')";
 		  System.out.println(query);
 		    resultado = st.executeQuery(query);
 		    if(!resultado.equals("")){

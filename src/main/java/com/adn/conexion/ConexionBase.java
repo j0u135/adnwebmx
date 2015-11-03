@@ -16,15 +16,21 @@ public class ConexionBase {
      	e.printStackTrace();
         System.out.println( "fallo org.sqlite.JDBC");
      }	 
-		try {			 
-			 URI dbUri = new URI(System.getenv("DATABASE_URL"));
+		try {
 
-			    String username = dbUri.getUserInfo().split(":")[0];
+			 
+			
+			if (System.getenv("DATABASE_URL") != null && !System.getenv("DATABASE_URL").equals("")){
+				URI dbUri = new URI(System.getenv("DATABASE_URL"));
+				String username = dbUri.getUserInfo().split(":")[0];
 			    String password = dbUri.getUserInfo().split(":")[1];
 			    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-
-			 con= DriverManager.getConnection(dbUrl, username, password);
-			 
+	
+			    con = DriverManager.getConnection(dbUrl, username, password); 
+			}
+			else{
+				con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ADNWeb", "adn10xbd", "zaq12wsx");
+			}
           
 		} catch (SQLException e) {
 			e.printStackTrace();
