@@ -50,7 +50,7 @@ public class ControlAprobaciones extends HttpServlet {
 			Integer anio = fecha.get(Calendar.YEAR);
 			int mesa = fecha.get(Calendar.MONTH);
 			String mesB="";
-			System.out.println("año "+anio);
+			System.out.println("anio "+anio);
 			
 			if(mesa==0)mesB="enef";
 			if(mesa==1)mesB="febf";

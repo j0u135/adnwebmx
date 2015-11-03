@@ -132,7 +132,7 @@ public class guardarUsuario extends HttpServlet {
 					   request.setAttribute("variableEnviada", new String("El usuario se guardo correctamente"));
 					   request.getRequestDispatcher("Conf-2.jsp").forward(request, response);
 				   }else{
-					   System.out.println("no guard—");
+					   System.out.println("no guardo");
 				    //PrintWriter out=response.getWriter();
 					   request.setAttribute("variableEnviada", new String("No se pudo guardar el usuario, intente nuevamente"));
 					   request.getRequestDispatcher("Conf-2.jsp").forward(request, response);

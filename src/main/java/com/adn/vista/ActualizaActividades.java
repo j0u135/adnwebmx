@@ -205,9 +205,9 @@ public class ActualizaActividades extends HttpServlet {
 			if(prioMesActual){
 				ArrayList<Actividad> arrActividades = ClaseActividad.consultarActividades(idPrioridad);
 				if(arrActividades!=null && arrActividades.size()>0 && arrActJsp.size()>0){
-					int numActjsp = arrActJsp.size(); //Número de acividades en pantalla
-					int numActAnt = arrActividades.size(); //Número de actividades en bd
-					if(numActjsp == numActAnt){ //Son el mismo número de actividades
+					int numActjsp = arrActJsp.size(); //Numero de acividades en pantalla
+					int numActAnt = arrActividades.size(); //Numero de actividades en bd
+					if(numActjsp == numActAnt){ //Son el mismo numero de actividades
 						for(int j=0; j<numActAnt;j++){
 							Actividad actJSP = arrActJsp.get(j);
 							Actividad act = arrActividades.get(j);
@@ -466,7 +466,7 @@ public class ActualizaActividades extends HttpServlet {
 		int tamAcAct = arrAvAct.size();
 		int tamAvActJSP = arrAvActJSP.size();
 		boolean existe=false;
-		if(tamAcAct == tamAvActJSP){ //Son el mismo números de avances
+		if(tamAcAct == tamAvActJSP){ //Son el mismo numeros de avances
 			for(int i=0; i<arrAvAct.size(); i++){
 				AvanceActividades avAct = arrAvAct.get(i);
 				AvanceActividades avActJSP = null;

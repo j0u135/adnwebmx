@@ -58,7 +58,7 @@ public class solicitarApro extends HttpServlet {
 		System.out.println("todos-"+usuario+" "+aproba1+" "+aproba2+" "+aproba3+" "+aproba4+" "+mes+" "+fecha);
 		String idHojaRumbo = ClaseHojaRumbo.consultaIdHR(usuario, mes);
 		if(aproba1!=""){
-			Email e1 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba1,"Solicitud de aprobación","Este correo es generado por ADN \nEstimado "+aproba1+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
+			Email e1 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba1,"Solicitud de aprobacion","Este correo es generado por ADN \nEstimado "+aproba1+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
 			if (e1.sendMail()){
   				System.out.print("si envia apro1");
   				Comentarios chr = new Comentarios(usuario,aproba1,comentario,mes,idHojaRumbo);
@@ -69,7 +69,7 @@ public class solicitarApro extends HttpServlet {
 			}
 		}
 		if(aproba2!=""){
-			Email e2 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba2,"Solicitud de aprobación","Este correo es generado por ADN \nEstimado "+aproba2+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
+			Email e2 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba2,"Solicitud de aprobacion","Este correo es generado por ADN \nEstimado "+aproba2+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
 			if (e2.sendMail()){
 	        	System.out.print("si envia apro2");
 	        	Comentarios chr2 = new Comentarios(usuario,aproba1,comentario,mes,idHojaRumbo);
@@ -81,7 +81,7 @@ public class solicitarApro extends HttpServlet {
 		}
 		
 		if(aproba3!=""){
-			Email e3 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba3,"Solicitud de aprobación","Este correo es generado por ADN \nEstimado "+aproba3+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
+			Email e3 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba3,"Solicitud de aprobacion","Este correo es generado por ADN \nEstimado "+aproba3+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
 			if (e3.sendMail()){
 	        	System.out.print("si envia apro3");
 	        	Comentarios chr3 = new Comentarios(usuario,aproba1,comentario,mes,idHojaRumbo);
@@ -92,7 +92,7 @@ public class solicitarApro extends HttpServlet {
 	        }
 		}
 		if(aproba4!=""){
-				Email e4 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba4,"Solicitud de aprobación","Este correo es generado por ADN \nEstimado "+aproba4+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
+				Email e4 = new Email("sistema_adn@10x.mx","SistemaADN2015",aproba4,"Solicitud de aprobacion","Este correo es generado por ADN \nEstimado "+aproba4+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\n Comentarios: "+comentario+"\nPor favor aprueba o rechace antes del cierre.");
 				if (e4.sendMail()){
 		        	System.out.print("si envia apro4");
 		        	Comentarios chr4 = new Comentarios(usuario,aproba1,comentario,mes,idHojaRumbo);

@@ -44,7 +44,7 @@ public class CargaArchivoXmes extends HttpServlet {
 			//String anio = request.getParameter("anioSel");
 			String anio = request.getParameter("anio1");
 			String[] arrIndicador;
-			System.out.println("Num reg "+numReg+" año: "+ anio);
+			System.out.println("Num reg "+numReg+" anioo: "+ anio);
 			int agre= 1;
 			String nbIndicador = "";
 			String usuario="";
@@ -98,7 +98,7 @@ public class CargaArchivoXmes extends HttpServlet {
 						   			agre ++;
 						   		}
 							}else{
-								msj = "El usuario: "+usuario+" no cuenta con planeación para el mes de: "+mes;
+								msj = "El usuario: "+usuario+" no cuenta con planeacion para el mes de: "+mes;
 							}
 						}else{
 							msj = "Error en el registro: "+agre;

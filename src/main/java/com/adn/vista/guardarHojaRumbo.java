@@ -54,7 +54,7 @@ public class guardarHojaRumbo extends HttpServlet {
 		String porcentajeInd=request.getParameter("porInd");
 		String porcentajeProy=request.getParameter("porProy");
 		
-		System.out.println("Mes hoja Rumbo: "+mesNum+" "+mesEnviado + " Año: "+ anio);
+		System.out.println("Mes hoja Rumbo: "+mesNum+" "+mesEnviado + " Anio: "+ anio);
 		
 		HojaRumbo nuevaHoja=new HojaRumbo(nombre, solicitud, mesNum, resultado);
 		boolean estado=ClaseHojaRumbo.verificaEstado(nuevaHoja, anio);

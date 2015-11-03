@@ -51,8 +51,8 @@ public static int agregarDiagrama(Diagrama nuevoDiagrama){
    String query= "INSERT INTO diagrama (idDepartamento, idArea,creado_por,fh_creacion) VALUES ("+nuevoDiagrama.getIdDeparatamento()+","+nuevoDiagrama.getIdArea()+",'"+nuevoDiagrama.getCreadoPor()+"','"+nuevoDiagrama.getFhCreacion()+"')";
    st.executeUpdate(query);
    String query1= "SELECT idDiagrama FROM diagrama WHERE idArea="+nuevoDiagrama.getIdArea()+" AND idDepartamento="+nuevoDiagrama.getIdDeparatamento();
-	System.out.println(query1);
-	resultado = st.executeQuery(query1);
+	
+   resultado = st.executeQuery(query1);
 	while(resultado.next()){
 		String clave = resultado.getString(1);
 		if(clave!=null && !clave.equals("")){

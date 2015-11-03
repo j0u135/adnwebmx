@@ -71,8 +71,8 @@ public class CargaInterfazIndicadores extends HttpServlet {
 		}
 		
 		Calendar fecha = Calendar.getInstance();
-		//System.out.println("Mes CargaInter: "+ mes);
-		//System.out.println("Mes num: "+ mesNum +" año - origen - usuario"+anio+" "+origen+" "+usuario);
+
+		
 		Integer mesInt = fecha.get(Calendar.MONTH);
 		Integer ano = fecha.get(Calendar.YEAR);
 		if(anio==""){
@@ -92,7 +92,7 @@ public class CargaInterfazIndicadores extends HttpServlet {
 		Usuario usu = ClaseUsuario.buscaUsuario(usuario);
 		ArrayList<Indicador> indAsocXpuesto = this.validaNIsXpuesto(usu);
 		ArrayList <IndicadorInteligente> arrIndInte= (ArrayList <IndicadorInteligente>) ClaseIndicadoresInteligentes.consultar(usuario,mes,anio);
-		if(arrIndInte==null && indAsocXpuesto!=null){ //Si no hay NI´s los da de alta
+		if(arrIndInte==null && indAsocXpuesto!=null){ //Si no hay NIs los da de alta
 			System.out.println("inserta en el if");
 			for(int x=0; x<indAsocXpuesto.size(); x++){
 				Indicador indicador = indAsocXpuesto.get(x);
@@ -108,7 +108,7 @@ public class CargaInterfazIndicadores extends HttpServlet {
 				indinte.setRpond("0");
 				ClaseIndicadoresInteligentes.agregarIndicador(indinte);
 			}
-		}else{ //Si tiene NI´s se valida que coincidan con los asociados
+		}else{ //Si tiene NIs se valida que coincidan con los asociados
 			for(int x=0; x<indAsocXpuesto.size(); x++){
 				//System.out.println("inserta en el else");
 				Indicador indicador = indAsocXpuesto.get(x);

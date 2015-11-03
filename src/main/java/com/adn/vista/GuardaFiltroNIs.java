@@ -117,14 +117,14 @@ public class GuardaFiltroNIs extends HttpServlet {
 					aut.setStCambio("Pendiente");
 					aut.setUsrSolicita(usuSes);
 					if(!filtroIndant.getObjetivo().equalsIgnoreCase(filtroIndnew.getObjetivo())){
-						aut.setNbCampo("Descripción");	
+						aut.setNbCampo("Descripcion");	
 						aut.setCampoBD("objetivo");
 						aut.setValorAnterior(filtroIndant.getObjetivo());
 						aut.setValorNuevo(filtroIndnew.getObjetivo());
 						ClaseAutorizaCambioFiltro.agregarAutoriza(aut);
 					}
 					if(!filtroIndant.getFormula().equalsIgnoreCase(filtroIndnew.getFormula())){
-						aut.setNbCampo("Fórmula");	
+						aut.setNbCampo("Formula");	
 						aut.setCampoBD("formula");
 						aut.setValorAnterior(filtroIndant.getFormula());
 						aut.setValorNuevo(filtroIndnew.getFormula());
@@ -159,14 +159,14 @@ public class GuardaFiltroNIs extends HttpServlet {
 						ClaseAutorizaCambioFiltro.agregarAutoriza(aut);
 					}
 					if(!filtroIndant.getDistribucion().equalsIgnoreCase(filtroIndnew.getDistribucion())){
-						aut.setNbCampo("Distribución");	
+						aut.setNbCampo("Distribucion");	
 						aut.setCampoBD("distribucion");
 						aut.setValorAnterior(filtroIndant.getDistribucion());
 						aut.setValorNuevo(filtroIndnew.getDistribucion());
 						ClaseAutorizaCambioFiltro.agregarAutoriza(aut);
 					}
 					if(!filtroIndant.getFrecEmision().equalsIgnoreCase(filtroIndnew.getFrecEmision())){
-						aut.setNbCampo("Frecuencia de Emisión");	
+						aut.setNbCampo("Frecuencia de Emision");	
 						aut.setCampoBD("frecuencia_emision");
 						aut.setValorAnterior(filtroIndant.getFrecEmision());
 						aut.setValorNuevo(filtroIndnew.getFrecEmision());
@@ -222,7 +222,7 @@ public class GuardaFiltroNIs extends HttpServlet {
 				arrPuestos = ClasePuestos.buscaPuestos(idArea, idDepto);
 				Arbol arbol2 = new Arbol();
 				arbol2.setIdArea(idArea);
-				// Para grafica por área y depto
+				// Para grafica por area y depto
 				totNIs = ClaseIndicador.cuentaIndxArbol(idArbol,idDepto);
 				totPues = ClasePuestos.cuentaPuestxArea(idArea,idDepto);
 				if(arrPuestos.size()>0){
@@ -247,7 +247,7 @@ public class GuardaFiltroNIs extends HttpServlet {
 				vistaNIs ="1";
 				idArbol = ClaseArbol.verificaRepetido(arbol);
 				arrPuestos = ClasePuestos.buscaPuestosXarea(idArea);
-				// Para grafica por área
+				// Para grafica por area
 				totNIs = ClaseIndicador.cuentaIndxArbol(idArbol);
 				totPues = ClasePuestos.cuentaPuestxArea(idArea);
 				if(arrDeptos.size()>0){
@@ -325,14 +325,14 @@ public class GuardaFiltroNIs extends HttpServlet {
 		request.setAttribute("puestos", arrPuestos);
 		request.setAttribute("indicadores", arrIndicadores);
 		request.setAttribute("vistaNI", vistaNIs);
-		//Para gráfica total de NIs, total de puestos, ni´s y puesto por depto, ni´s por puesto
+		//Para grafica total de NIs, total de puestos, nis y puesto por depto, nis por puesto
 		request.setAttribute("totNIs", totNIs); 
 		request.setAttribute("totPues", totPues);
 		//Regresa un arreglo, en cada nodo hay una cadena separada por coma; que tiene Nombre del depto, num de NI, num de Depto
 		request.setAttribute("niPuesXdepto", niPuesXdepto);
 		//Regresa un arreglo, en cada nodo hay una cadena separada por coma; que tiene Nombre del puesto, num de NI.
 		request.setAttribute("niXpuesto", niXpuesto);
-		//Para la tabla de NI´s
+		//Para la tabla de NIs
 		request.setAttribute("arrIndTabla", arrIndTabla);
 		request.setAttribute("arrFiltroTbl", arrFiltroTbl);
 		request.getRequestDispatcher("ConsultaNIs.jsp").forward(request, response);

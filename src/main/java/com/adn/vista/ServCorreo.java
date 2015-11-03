@@ -48,11 +48,11 @@ public class ServCorreo extends HttpServlet {
 		
 		
 		//Linea para las solicitudes, se debera repetir de acuerdo a los usuarios a los que se debe enviar el correo
-		Email e = new Email("correo que enviara","contraseña",destino1,"Este correo es generado por ADN \nEstimado "+destino1+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\nResultado: "+resultado+"\nPor favor aprueba o rechace antes del cierre.");
+		Email e = new Email("correo que enviara","contrasena",destino1,"Este correo es generado por ADN \nEstimado "+destino1+"\nEl siguiente colaborador ha solicitado la aprobacion de su hoja de ruta\nUsuario: "+usuario+"\nResultado: "+resultado+"\nPor favor aprueba o rechace antes del cierre.");
         
 		
 		//Linea para rechazar o aprobar, esta solo sera para el usuario que solicito la aprobacion
-		//Email e = new Email("correo","contraseña",usuario,"Este correo es generado por ADN \nEstimado "+usuario+"\n"+destino1+" ha "+calificacion+" la hoja de ruta del mes "+mes+"\nResultado: "+resultado+"\nCommentarios: "+comentarios+"\nPor favor, realice sus ajustes");
+		//Email e = new Email("correo","contrasena",usuario,"Este correo es generado por ADN \nEstimado "+usuario+"\n"+destino1+" ha "+calificacion+" la hoja de ruta del mes "+mes+"\nResultado: "+resultado+"\nCommentarios: "+comentarios+"\nPor favor, realice sus ajustes");
 		
 		
 		if (e.sendMail()){

@@ -94,7 +94,7 @@ public class apruebaUsuario extends HttpServlet {
 			estatus = "Aprobada";
 		}
 		
-		//System.out.println("Aprobación: "+raproNum+"-"+mes+"-"+fechaAct+"-"+usuAprobado+"-"+aproOb+"-"+estatus);
+		//System.out.println("Aprobacion: "+raproNum+"-"+mes+"-"+fechaAct+"-"+usuAprobado+"-"+aproOb+"-"+estatus);
 		HojaRumbo hr= new HojaRumbo();
 		ClaseHojaRumbo.apruebaUsu(raproNum,mes,fechaAct,usuAprobado,aproOb,estatus);
 		ArrayList<HojaRumbo> arrHoRu=ClaseHojaRumbo.consultaApro1(usuAprobado,mes);
