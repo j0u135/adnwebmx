@@ -15,9 +15,9 @@ public class UserDAOSQLite implements IUsuarioDAO {
 	private static final int ADMINISTRADOR_ADN = 1;
 	private static final int ADMINISTRADOR = 2;
 	
-	private static final String SELECTION = "SELECT idUsuario, Nombre, u.User, (SELECT nb_Puesto FROM Puestos WHERE nullif(u.Puesto, '')::int = idPuesto), Puesto, TipoUsuario, (SELECT r.Nombre FROM Roles r WHERE TipoUsuario::int = r.IdRol), Area FROM usuarios u ";
+	private static final String SELECTION = "SELECT idUsuario, Nombre, u.User, (SELECT nb_Puesto FROM Puestos WHERE u.Puesto = idPuesto), Puesto, TipoUsuario, (SELECT r.Nombre FROM Roles r WHERE TipoUsuario::int = r.IdRol), Area FROM usuarios u ";
 											
-	protected static final String SELECT_USUARIOS_BY_PUESTO = SELECTION + "WHERE (nullif(u.Puesto, '')::int =";
+	protected static final String SELECT_USUARIOS_BY_PUESTO = SELECTION + "WHERE u.Puesto =";
 	protected static final String SELECT_USUARIO_BY_USERNAME = SELECTION + "WHERE u.User ='";
 	protected static final String SELECT_EMPLEADOS = SELECTION + "WHERE ";
 	@Override
