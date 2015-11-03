@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class ConexionBase {
  private Connection con = null;
- public ConexionBase() throws URISyntaxException {
+ public ConexionBase() {
 	 try {
          //Class.forName("org.sqlite.JDBC");
          Class.forName("org.postgresql.Driver");
@@ -16,9 +16,7 @@ public class ConexionBase {
      	e.printStackTrace();
         System.out.println( "fallo org.sqlite.JDBC");
      }	 
-		try {
-			System.out.println("dasdasdasdasdasd");
-			 
+		try {			 
 			 URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
 			    String username = dbUri.getUserInfo().split(":")[0];
@@ -31,6 +29,9 @@ public class ConexionBase {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("fallo conexion y creacion de statement");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
  }
  
