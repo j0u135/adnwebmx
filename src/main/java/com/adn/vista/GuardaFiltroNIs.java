@@ -325,7 +325,7 @@ public class GuardaFiltroNIs extends HttpServlet {
 		request.setAttribute("puestos", arrPuestos);
 		request.setAttribute("indicadores", arrIndicadores);
 		request.setAttribute("vistaNI", vistaNIs);
-		//Para grafica total de NIs, total de puestos, nis y puesto por depto, nis por puesto
+		//Para grafica total de NIs, total de puestos, nis y puesto por depto, nis por puesto 
 		request.setAttribute("totNIs", totNIs); 
 		request.setAttribute("totPues", totPues);
 		//Regresa un arreglo, en cada nodo hay una cadena separada por coma; que tiene Nombre del depto, num de NI, num de Depto
