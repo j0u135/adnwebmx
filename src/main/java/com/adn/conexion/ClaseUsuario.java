@@ -43,8 +43,7 @@ public class ClaseUsuario {
 			   if(con!=null){
 			    Statement st;
 			    st = con.createStatement();
-			    String query= "SELECT u.clave,u.nombre,u.correo,(Select nb_Puesto FROM Puestos WHERE idPuesto=u.puesto),u.area,u.jefedirecto,tp.nombre, u.personalCargo, u.visitas, u.autorizador FROM USUARIOS u, ROLES tp WHERE u.USER='"+user+"' AND tp.idrol = u.tipousuario::int AND u.activo = 'true'";
-			    System.out.println(query);//						1		2	  		3		4	   5		6			7			8				9			10
+			    String query= "SELECT u.clave,u.nombre,u.correo,(Select nb_Puesto FROM Puestos WHERE idPuesto=u.puesto::int),u.area,u.jefedirecto,tp.nombre, u.personalCargo, u.visitas, u.autorizador FROM USUARIOS u, ROLES tp WHERE u.USER='"+user+"' AND tp.idrol = u.tipousuario::int AND u.activo = 'true'";			    System.out.println(query);//						1		2	  		3		4	   5		6			7			8				9			10
 			    resultado = st.executeQuery(query);
 			    if(!resultado.equals("")){
 					   //Aviso de que el usuario esta repetido, se esta validando por correo electronico
