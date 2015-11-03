@@ -1,0 +1,614 @@
+#container {
+/*     background-image: url(../ImagenesADN/background.png); */
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 1200px;
+    z-index: 1;
+    padding-left:5%;
+    padding-right: 5%;
+}
+#barrausuario {
+    background-color: #0063be;
+    background-image: url(../ImagenesADN/textura-pleca-usuario.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    align:center;
+    height: 40px;
+    width: 100%;
+
+}
+.shadow {
+    -moz-box-shadow: 0px 5px 10px #bababa;
+    -webkit-box-shadow: 0px 5px 10px #bababa;
+    box-shadow: 0px 5px 10px #bababa;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#111111')";
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#111111');
+
+}
+#espaciousuario {
+    text-align: center;
+    height: 26px;
+    width: 180px;
+    position: absolute;
+    z-index: 3;
+    left: 193px;
+    top: 24px;
+}
+
+#usuario {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+   
+}
+#iconofecha {
+    text-align: center;
+    height: 31px;
+    width: 28px;
+    position: absolute;
+    z-index: 6;
+    left: 954px;
+    top: 25px;
+}
+#fecha {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    height: 16px;
+    width: 84px;
+    z-index: 7;
+   
+}
+#iconohora {
+    text-align: center;
+    height: 31px;
+    width: 26px;
+    position: absolute;
+    z-index: 8;
+    top: 25px;
+    left: 1090px;
+}
+#hora {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    height: 16px;
+    width: 61px;
+   
+}
+#logoadn {
+    text-align: center;
+    height: 98px;
+    width: 116px;
+    position: absolute;
+    z-index: 10;
+    left: 141px;
+    top: 87px;
+}
+#fondomenu {
+    text-align: center;
+    height: 107px;
+    width: 639px;
+    position: absolute;
+    z-index: 11;
+    left: 409px;
+    top: 77px;
+}
+#botondireccion {
+    text-align: center;
+    height: 99px;
+    width: 97px;
+    position: absolute;
+    z-index: 12;
+    left: 410px;
+    top: 78px;
+}
+#botonanalisis {
+    text-align: center;
+    height: 99px;
+    width: 95px;
+    position: absolute;
+    z-index: 13;
+    left: 954px;
+    top: 78px;
+}
+#botongerencia {
+    text-align: center;
+    height: 99px;
+    width: 109px;
+    position: absolute;
+    z-index: 14;
+    top: 78px;
+    left: 511px;
+}
+#botonplaneacion {
+    text-align: center;
+    height: 99px;
+    width: 110px;
+    position: absolute;
+    z-index: 15;
+    top: 78px;
+    left: 623px;
+}
+#botontablero {
+    text-align: center;
+    height: 99px;
+    width: 109px;
+    position: absolute;
+    z-index: 16;
+    left: 736px;
+    top: 78px;
+}
+#botonadmon {
+    text-align: center;
+    height: 99px;
+    width: 105px;
+    position: absolute;
+    z-index: 16;
+    top: 78px;
+    left: 847px;
+}
+#gadgetscontainer {
+    background-color: #eeeeeb;
+    text-align: center;
+    height: 513px;
+    width: 100px;
+    position: absolute;
+    z-index: 16;
+    left: 87%;
+    top: 192px;
+}
+#gadgetsuno {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    z-index: 17;
+}
+#gadgetsdos {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    z-index: 18;
+    top: 464px;
+}
+#gadgetindicadores {
+    text-align: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 20;
+    left: 24px;
+    top: 59px;
+}
+#gadgetgraficas {
+    text-align: center;
+    height: 41px;
+    width: 38px;
+    position: absolute;
+    z-index: 20;
+    left: 34px;
+    top: 152px;
+}
+#alertas {
+    height: auto;
+    overflow: auto;
+    width: 98%;
+    z-index: 3;
+    left: 10px;
+    top: 412px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+#indicadoresconsola {
+    height: auto;
+    overflow: auto;
+    width: 651px;
+    z-index: 3;
+    left: 10px;
+    top: 228px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+#consolareportes {
+    height: auto;
+    overflow: auto;
+    width: 95%;
+    z-index: 3;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+
+.titulodivs {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: #004065;
+    text-align: left;
+    height: 15px;
+    width: 140px;
+
+    z-index: 10;
+    left: 20px;
+    top: 20px;
+    font-style: normal;
+}
+#nombrealertas {
+    position:absolute;
+    width:164px;
+    height:23px;
+    z-index:1;
+    left: 7px;
+    top: 12px;
+    text-align: left;
+}
+#nombrereportes {
+    position:absolute;
+    width:164px;
+    height:23px;
+    z-index:1;
+    left: 17px;
+    top: 16px;
+}
+#nombrereporteventas {
+    position:absolute;
+    width:75px;
+    height:71px;
+    z-index:1;
+    left: 106px;
+    top: 79px;
+}
+#nombrereporteentregas {
+    position:absolute;
+    width:82px;
+    height:71px;
+    z-index:1;
+    left: 106px;
+    top: 190px;
+}
+#nombreindicadores {
+
+    width:242px;
+    height:23px;
+    z-index:1;
+    left: 14px;
+    top: 18px;
+}
+#causas {
+
+    width:144px;
+    height:28px;
+    z-index:11;
+    left: 251px;
+    top: 47px;
+    background-image: url(../ImagenesADN/espacio-causas-riesgos.png);
+    padding-top:8px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.causasriesgos {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: afafa6;
+    opacity:0.5;
+}
+.cajatextocausariesgo {
+    font-family: DIN;
+    font-size: 13px;
+    font-weight: normal;
+    color: #003050;
+    text-align: left;
+    padding-left:10px;
+    padding-top:10px;
+}
+#riesgos {
+
+    width:144px;
+    height:28px;
+    z-index:12;
+    top:47px;
+    left: 470px;
+    background-image: url(../ImagenesADN/espacio-causas-riesgos.png);
+    background-repeat: no-repeat;
+    padding-top: 8px;
+}
+#iconosalertas {
+
+    width:157px;
+    height:111px;
+    z-index:13;
+    left: 43px;
+    top: 123px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+#indicador {
+
+    width:82px;
+    height:56px;
+    z-index:14;
+}
+#textoentregas {
+
+    width:75px;
+    height:15px;
+    z-index:15;
+    left: 15px;
+    top: 80px;
+}
+#alertaverde {
+
+    width:22px;
+    height:22px;
+    z-index:16;
+    left: 121px;
+    top: 20px;
+}
+#cajatextocausas {
+
+    width:190px;
+    height:190px;
+    z-index:14;
+    left: 229px;
+    top: 96px;
+}
+#cajatextoriesgo {
+
+    width:190px;
+    height:190px;
+    z-index:14;
+    left: 439px;
+    top: 96px;
+    text-align: center;
+}
+
+#apDiv2 {
+
+    width:200px;
+    height:115px;
+    z-index:1;
+}
+#reporteventas {
+
+    width:60px;
+    height:70px;
+    z-index:22;
+    left: 33px;
+    top: 77px;
+}
+#apDiv3 {
+
+    width:200px;
+    height:115px;
+    z-index:23;
+}
+#apDiv4 {
+
+    width:200px;
+    height:115px;
+    z-index:23;
+}
+#reporteentregas {
+
+    width:60px;
+    height:70px;
+    z-index:23;
+    left: 34px;
+    top: 191px;
+}
+#apDiv5 {
+
+    width:200px;
+    height:115px;
+    z-index:24;
+}
+
+#divtotal {
+   height: auto;
+    overflow: auto;
+    width: 100%;
+    z-index: 3;
+    left: 10px;
+    top: 228px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+
+.cajatextocausariesgo {
+    font-family: DIN;
+    font-size: 13px;
+    font-weight: normal;
+    color: #003050;
+}
+
+.causasriesgos {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: afafa6;
+    opacity:0.5;
+}
+
+.titulodivs {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #0079C1;
+	text-align: left;
+	font-style: normal;
+}
+
+.claseDiv { 
+	border-style: outset; border-width: 4px; 
+	resize:both;
+    overflow:auto;
+    height: 320px;
+    width: 320px;
+	
+}
+
+
+	#modal
+	{
+	  position: absolute;
+	  padding: 0;
+	  margin: 0;
+	  width: 100%;
+	  height: 200%;
+	  z-index: 50;
+	  filter: alpha(opacity=1);
+	  opacity: 0.8;
+	  -moz-opacity:0.8;
+	  -webkit-opacity:0.95;
+	  -o-opacity:0.8;
+	  -ms-opacity:0.8;
+	  background-color: #808080;
+	  left: 0;
+	  top: 0;
+	  overflow: auto;
+	}
+	
+	#modalModificacion
+	{
+	  position: absolute;
+	  padding: 0;
+	  margin: 0;
+	  width: 100%;
+	  height: 200%;
+	  z-index: 50;
+	  filter: alpha(opacity=50);
+	  opacity: 0.8;
+	  -moz-opacity:0.8;
+	  -webkit-opacity:0.95;
+	  -o-opacity:0.8;
+	  -ms-opacity:0.8;
+	  background-color: #808080;
+	  left: 0;
+	  top: 0;
+	  overflow: auto;
+	}
+
+	.contenedor
+	{
+	  width: 500px;
+	  background: #fff;
+	  position: relative;
+	  margin: 18% auto;
+	  padding: 30px;
+	  -moz-border-radius: 7px;
+	  border-radius: 7px;
+	  -webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	  -moz-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	  box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	  background: -moz-linear-gradient(#fff, #ccc);
+	  background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57,       rgb(230,230,230)));
+	  text-shadow: 0 1px 0 #fff;
+	}
+
+	.contenedor h2 {
+	  font-size: 36px;
+	  padding: 0 0 20px;
+	}
+
+	.contenedor a[href="#close"] {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	  color: transparent;
+	}
+
+	.contenedor a[href="#close"]:focus {
+	  outline: none;
+	}
+
+	.contenedor a[href="#close"]:after {
+	  content: 'X';
+	  display: block;
+	  position: absolute;
+	  right: -10px;
+	  top: -10px;
+	  width: 1.5em;
+	  padding: 1px 1px 1px 2px;
+	  text-decoration: none;
+	  text-shadow: none;
+	  text-align: center;
+	  font-weight: bold;
+	  background: #000;
+	  color: #fff;
+	  border: 3px solid #fff;
+	  -moz-border-radius: 20px;
+	  border-radius: 20px;
+	  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	}
+
+	.contenedor a[href="#close"]:focus:after,
+	.contenedor a[href="#close"]:hover:after {
+	  -webkit-transform: scale(1.1,1.1);
+	  -moz-transform: scale(1.1,1.1);
+	}
+
+	.footer {	font-family: "DIN Alternate Medium";
+	font-size: 12px;
+	font-weight: normal;
+	color: afafa6;
+	opacity:0.5;
+}
+
+.selectEstilo {
+width: 107px;
+padding: 5px;
+font-size: 12px;
+border: 1px solid #0000FF;
+height: 34px;
+background-color:#ddd;
+}
+
+.selectEstiloMediano {
+width: 150px;
+padding: 5px;
+font-size: 12px;
+text-align:center;
+border: 1px solid #0000FF;
+height: 34px;
+background-color:#ddd;
+}
+
+.selectEstiloGrande {
+width: 200px;
+padding: 5px;
+font-size: 12px;
+border: 1px solid #0000FF;
+height: 34px;
+background-color:#ddd;
+}
+
+.selectEstiloChico {
+width: 107px;
+padding: 5px;
+font-size: 10px;
+border: 1px solid #0000FF;
+height: 34px;
+background-color:#ddd;
+}
+
+
+.linea-seleccionada{
+	background-color: lightblue;
+    border: 2px solid blanchedalmond;
+}

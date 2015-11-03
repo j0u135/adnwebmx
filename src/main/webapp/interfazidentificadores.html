@@ -1,0 +1,482 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link href="EstilosADN/fuente.css" rel="stylesheet" type="text/css">
+    <link href="EstilosADN/StyleADN.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="EstilosADN/jquery-ui.css">
+    <link rel="stylesheet" href="EstilosADN/bootstrap.min.css">
+    <link rel="stylesheet" href="EstilosADN/bootstrap-theme.min.css">
+    <link href="EstilosADN/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="EstilosADN/dis.css" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+
+  
+
+	<link rel="stylesheet" href="js/jquery/ui-lightness/jquery-ui-1.10.2.custom.css" />
+	<link rel="stylesheet" href="css/color-picker.css" />
+	<link href="css/primitives.latest.css?207" media="screen" rel="stylesheet" type="text/css" />
+
+
+	<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.10.2.custom.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.tinycolorpicker.js"></script>
+	<script type="text/javascript" src="js/primitives.min.js?207"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/diagrama-identificadores.js"></script>
+	
+	<script src="js/bootstrap-modal.js"></script>
+
+
+<%@ page import = "com.adn.conexion.ClaseArbol"%> 
+<%@ page import = "com.adn.conexion.ClaseDiagrama"%> 
+<%@ page import = "java.sql.ResultSet"%>
+<%@ page import ="java.sql.SQLException"%> 
+
+
+<!-- Filtro ind -->
+<%@ page import = "com.adn.conexion.Operaciones"%>
+<%@ page import = "com.adn.conexion.Conexion"%> 
+<%@ page import = "java.sql.ResultSet"%> 
+<%@ page import = "java.sql.Statement"%> 
+<%@ page import = "com.adn.conexion.ClaseIndicador"%> 
+
+</head>
+
+
+
+
+
+<script>
+//Filtro indicadores
+
+function carga(x){
+	//alert(x);
+	cadena=x.split("-");
+	//alert(cadena[0]);
+	document.getElementById("nombre").value=cadena[0];
+	document.getElementById("definicion").value=cadena[1];
+	document.getElementById("formula").value=cadena[2];
+	document.getElementById("frecuencia").value=cadena[3];
+	document.getElementById("tipo").value=cadena[4];
+	document.getElementById("unidad").value=cadena[5];
+	document.getElementById("q1").value=cadena[6];
+	document.getElementById("q2").value=cadena[7];
+	document.getElementById("q3").value=cadena[8];
+	document.getElementById("q4").value=cadena[9];
+	//document.getElementById("rolvisible").value=cadena[10];
+	document.getElementById("fuenteDatos").value=cadena[11];
+	document.getElementById("responsableEmision").value=cadena[12];
+	document.getElementById("distribucion").value=cadena[13];
+		
+}
+
+function filtrarInd(){
+	
+	nom=document.getElementById("nombre").value;
+	def=document.getElementById("definicion").value;
+	uni=document.getElementById("unidad").value;
+	fuenteDatos=document.getElementById("fuenteDatos").value;
+	form=document.getElementById("formula").value;
+	respEmision=document.getElementById("responsableEmision").value;
+	dist=document.getElementById("distribucion").value;
+	frec=document.getElementById("frecuencia").value;
+	tip=document.getElementById("tipo").value;
+	
+	
+	if(nom!="" && def!="" && uni!="Seleccione" && fuenteDatos!="" && form!="" && respEmision!="" && dist!="" && frec!="Seleccione" && tip!="Seleccione"){
+		
+		document.getElementById("llena").submit();
+		
+	}else{
+		
+		alert("Los campos con * son obligatorios");
+		
+	}
+	
+	
+}
+
+function elegir(){
+	
+	nom=document.getElementById("nombre").value;
+	def=document.getElementById("definicion").value;
+	uni=document.getElementById("unidad").value;
+	fuenteDatos=document.getElementById("fuenteDatos").value;
+	form=document.getElementById("formula").value;
+	respEmision=document.getElementById("responsableEmision").value;
+	dist=document.getElementById("distribucion").value;
+	frec=document.getElementById("frecuencia").value;
+	tip=document.getElementById("tipo").value;
+	
+	if(nom!="" && def!="" && uni!="Seleccione" && fuenteDatos!="" && form!="" && respEmision!="" && dist!="" && frec!="Seleccione" && tip!="Seleccione"){
+		
+		document.getElementById("llena").action="UpdateIndicador";
+		document.getElementById("llena").submit();
+		
+	}else{
+		
+		alert("Los campos con * son obligatorios");
+		
+	}
+	
+}
+
+
+function validaFrecuencia(){
+	frecuencia=document.getElementById("frecuencia").value;
+	if(frecuencia!=""){
+		if(frecuencia=="semanal"){
+			document.getElementById("tablaSemanal").style.display="inline";
+			document.getElementById("tablaMensual").style.display="none";
+			document.getElementById("tablaTrimestral").style.display="none";
+			
+		}else if(frecuencia=="mensual"){
+			document.getElementById("tablaSemanal").style.display="none";
+			document.getElementById("tablaMensual").style.display="inline";
+			document.getElementById("tablaTrimestral").style.display="none";
+			
+		}else{
+			document.getElementById("tablaSemanal").style.display="none";
+			document.getElementById("tablaMensual").style.display="none";
+			document.getElementById("tablaTrimestral").style.display="inline";
+			
+		}
+	}else{
+		document.getElementById("tablaSemanal").style.display="none";
+		document.getElementById("tablaMensual").style.display="none";
+		document.getElementById("tablaTrimestral").style.display="none";
+	}
+	
+}
+
+
+
+</script>
+
+
+
+
+
+
+<body>
+
+						
+						
+		<div ng-app="appADN" data-ng-controller="controllerADN">
+			<div class="barra" ng-show="bandera_editar">
+				<table align="center" width="100%" id="tablabarra" ng-show="bandera_editar">
+					<tbody>
+					<div ng-show="bandera_editar">
+						<tr ng-show="mostrarItem(item)" ng-repeat="item in myOptions.items">
+							<td><span id="titulo">Título</span><input type="text" class="form-control" ng-model="item.title" ng-required></td>
+							<td><span id="descripcion">Descripción	</span><input type="text" class="form-control" ng-model="item.description" ng-required></td>
+							<td class="barraderecha" align="center"><span class="btn-eliminar" ng-click="$parent.deleteItem($index)">Eliminar</span></td>
+							<td class="barraderecha" align="center"><span class="btn-salir" data-toggle="modal" data-target="#myModal" >Filtrar</span></td>
+							<td align="center" ng-click="$parent.cerrarPanel()"><span class="btn-salir">Cerrar</span></td>
+						</tr>
+						<tr>
+							<td><span>Color</span><span>
+								<div id="colorPicker1">
+									<a class="color"><div class="colorInner"></div></a>
+									<div class="track"></div>
+									<ul class="dropdown"><li></li></ul>
+									<input type="hidden" class="colorInput" id="colorescondido" />
+								</div></span>
+							</td>
+							<div name="color">
+								<input type="hidden" ng-model="item.itemTitleColor" ng-required/>
+							</div>
+						</tr>
+					</div>
+					</tbody>		
+				</table>
+			</div>
+			<div class="barra" ng-show="bandera_asociar">
+				<table align="center" width="100%" id="tablabarra" ng-show="bandera_asociar">
+					<tbody>
+				 	<div ng-show="bandera_asociar">
+				 		<tr>
+					 		<div><label>Asociando Elementos A: {{myOptions.items[cursor_asociar].title}}</label></div>
+					 		<ul>
+								<li ng-repeat="item in myOptions.items[cursor_asociar].asociados">
+									<label ng-click="setCursorItem(item)" style="color: #fff; display: inline; background: {{myOptions.items[item].itemTitleColor}}; border: 1px solid; border-radius: 4px; padding: 1px; margin: 1px;">
+										{{myOptions.items[item].title.substring(0,1)}}{{myOptions.items[item].id}}	
+									</label>
+									<span ng-click="$parent.eliminarAsociado(myOptions.cursorItem, $index)" class="btn-X">x</span>
+					 			</li>
+					 		</ul>
+							<span class="btn-salir" ng-click="cerrarPanel()">Cerrar</span>
+						</tr>
+					</div>
+					</tbody>		
+				</table>
+			</div>
+			<div>
+				<div id="westpanel" style="float:left; padding: 0px; margin: 0px; width: 14%;">
+					<div>Puestos</div>
+					<ul>
+						<li ng-repeat="puesto in lista_puestos">{{puesto}}</li>
+					</ul>
+	        	</div>
+				<div id="centerpanel"  style="float:right; width: 84%;">
+					<div bp-org-diagram data-options="myOptions" data-on-highlight-changed="onMyHighlightChanged()"  data-on-cursor-changed="onMyCursorChanged()" style= "height: 100%; overflow: hidden;">
+					</div> 
+				</div>
+			</div>
+		</div>
+</body>
+
+
+<!-- Modal Filtro Ind -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+       
+       <!-- FILTRO INDICADORES -->
+       
+	    <table>
+	        <tr>
+	            <td align="center">
+					<%
+					String nombre="", definicion="", formula="", frecuencia="", tipo="", unidad="", Q1="", Q2="", Q3="", Q4="", semana="",ene="",feb="",mar="",abr="",may="",jun="",jul="",ago="",sep="",oct="",nov="",dic="", permiso="",  busqueda="";
+					String fuente="", distribucion="", respEmision="";
+					%>
+							
+					<select class="selectEstiloGrande" onchange="carga(this.value); pintar();">
+					  <option value="Seleccione">Números Inteligentes Existentes</option>
+					<%
+				
+					ClaseIndicador ci= new ClaseIndicador();
+					ResultSet rs= ci.consultarInd();	
+
+					while(rs.next()){
+						nombre=rs.getString(1);
+						definicion=rs.getString(2);
+						formula=rs.getString(3);
+						frecuencia=rs.getString(4);
+						tipo=rs.getString(5);
+						unidad=rs.getString(6);
+						Q1=rs.getString(7);
+						Q2=rs.getString(8);
+						Q3=rs.getString(9);
+						Q4=rs.getString(10);
+						semana=rs.getString(11);
+						ene=rs.getString(12);
+						feb=rs.getString(13);
+						mar=rs.getString(14);
+						abr=rs.getString(15);
+						may=rs.getString(16);
+						jun=rs.getString(17);
+						jul=rs.getString(18);
+						ago=rs.getString(19);
+						sep=rs.getString(20);
+						oct=rs.getString(21);
+						nov=rs.getString(22);
+						dic=rs.getString(23);
+						permiso=rs.getString(24);
+						fuente=rs.getString(25);
+						distribucion=rs.getString(26);
+						respEmision=rs.getString(27);
+	
+	
+						//resultado2=rs.getString(2);
+					
+					%>
+					 <option value="<%=nombre+"-"+definicion+"-"+formula+"-"+frecuencia+"-"+tipo+"-"+unidad+"-"+Q1+"-"+Q2+"-"+Q3+"-"+Q4+"-"+permiso+"-"+fuente+"-"+distribucion+"-"+respEmision%>" ><%=nombre%></option>
+					
+					<%
+					}%>
+					</select>
+				</td>
+			<tr>
+				<td>	
+					<form id="llena" action="RegistroIndicador" method="post">
+					<table>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Numero Inteligente*:</label></td>
+	                    <td><input type="text" size="20" id="nombre" name="nombre"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Justificacion*:</label></td>
+	                    <td><input type="text" size="20" id="definicion" name="definicion"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Unidad*:</label></td>
+	                    <td>
+	                    <select class="selectEstiloMediano" onchange="" name="unidad" id="unidad">
+	                       <option value="Seleccione">-Seleccione-</option>
+	                       <option value="Porcentaje">Porcentaje</option>
+	                       <option value="Número">Numero</option>
+	                       <option value="Dinero">Dinero</option>
+	                       <option value="Tiempo">Tiempo</option>
+	                       <option value="Días">Dias</option>
+	                       <option value="Horas">Horas</option>
+	                       <option value="Minutos">Minutos</option>
+	                    </select>
+	                    </td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Fuente de datos*:</label></td>
+	                    <td><input type="text" size="20" id="fuenteDatos" name="fuenteDatos"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Fórmula de cálculo*:</label></td>
+	                    <td><input type="text" size="20" id="formula" name="formula"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Responsable de emisión*:</label></td>
+	                    <td><input type="text" size="20" id="responsableEmision" name="responsableEmision"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Distribución*:</label></td>
+	                    <td><input type="text" size="20" id="distribucion" name="distribucion"></td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Frecuencia*:</label></td>
+	                    <td>
+	                     <select class="selectEstiloMediano" onchange="validaFrecuencia()" name="frecuencia" id="frecuencia">
+	                       <option value="Seleccione">-Seleccione-</option>
+	                       <option value="semanal">Semanal</option>
+	                       <option value="mensual">Mensual</option>
+	                       <option value="trimestral">Trimestral</option>
+	                   </select>
+	                   </td>
+					</tr>
+					<tr>
+	                    <td><label class="cajatextocausariesgo">Tipo*:</label></td>
+	                    <td>
+	                    <select class="selectEstiloMediano" onchange="" name="tipo" id="tipo">
+	                       <option value="Seleccione">-Seleccione-</option>
+	                       <option value="Individual">Individual</option>
+	                       <option value="Global">Global</option>
+	                       <option value="KPI">KPI</option>
+	                    </select>
+	                    </td>
+					</tr>
+	                </table>
+	                <table id="tablaSemanal" style="display:none">
+						<tr>
+		                    <td><label class="cajatextocausariesgo">Semana:</label></td>
+						</tr>
+						<tr>
+		                    <td><input type="text" size="10" id="semana" name="semana"></td>
+						</tr>		
+					</table>
+					<table id="tablaMensual" style="display:none">
+						<tr>
+		                    <td><label class="cajatextocausariesgo">Ene:</label></td>
+		                    <td><label class="cajatextocausariesgo">Feb:</label></td>
+		                    <td><label class="cajatextocausariesgo">Mar:</label></td>
+		                    <td><label class="cajatextocausariesgo">Abr:</label></td>
+						</tr>
+						<tr>
+		                    <td><input type="text" size="10" id="ene" name="ene"></td>
+		                    <td><input type="text" size="10" id="feb" name="feb"></td>
+		                    <td><input type="text" size="10" id="mar" name="mar"></td>
+		                    <td><input type="text" size="10" id="abr" name="abr"></td>
+						</tr>	
+						<tr>
+							<td><label class="cajatextocausariesgo">May:</label></td>
+		                    <td><label class="cajatextocausariesgo">Jun:</label></td>
+		                    <td><label class="cajatextocausariesgo">Jul:</label></td>
+		                    <td><label class="cajatextocausariesgo">Ago:</label></td>
+						</tr>
+						<tr>
+							<td><input type="text" size="10" id="may" name="may"></td>
+		                    <td><input type="text" size="10" id="jun" name="jun"></td>
+		                    <td><input type="text" size="10" id="jul" name="jul"></td>
+		                    <td><input type="text" size="10" id="ago" name="ago"></td>
+						</tr>
+						<tr>
+							<td><label class="cajatextocausariesgo">Sep:</label></td>
+		                    <td><label class="cajatextocausariesgo">Oct:</label></td>
+		                    <td><label class="cajatextocausariesgo">Nov:</label></td>
+		                    <td><label class="cajatextocausariesgo">Dic:</label></td>
+						</tr>
+						<tr>
+							 <td><input type="text" size="10" id="sep" name="sep"></td>
+		                    <td><input type="text" size="10" id="oct" name="oct"></td>
+		                    <td><input type="text" size="10" id="nov" name="nov"></td>
+		                    <td><input type="text" size="10" id="dic" name="dic"></td>
+						</tr>		
+					</table>
+					 <table id="tablaTrimestral" style="display:none">
+						<tr>
+		                    <td><label class="cajatextocausariesgo">Meta Q1:</label></td>
+		                    <td><label class="cajatextocausariesgo">Meta Q2:</label></td>
+		                    <td><label class="cajatextocausariesgo">Meta Q3:</label></td>
+		                    <td><label class="cajatextocausariesgo">Meta Q4:</label></td>
+		
+						</tr>
+						<tr>
+		                    <td><input type="text" size="10" id="q1" name="q1"></td>
+		                    <td><input type="text" size="10" id="q2" name="q2"></td>
+		                    <td><input type="text" size="10" id="q3" name="q3"></td>
+		                    <td><input type="text" size="10" id="q4" name="q4"></td>
+						</tr>		
+					</table>
+	            </td>
+	        </tr>
+	    </table>
+       <!-- ********************************************************************* -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="filtrarInd()">Filtrar</button>
+        <button type="button" class="btn btn-primary" onclick="elegir()">Actualizar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </form>	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+var mes;
+var mesNumerico;
+var anoActual="";
+
+function linkDir(link){
+	document.getElementById("linkDestino").value=link;
+	document.getElementById("linkDireccion").submit();
+	
+}
+</script>
+
+<script>
+inicio();
+</script>
+<script>
+$('.bar-percentage[data-percentage]').each(function () {
+  var progress = $(this);
+  var percentage = Math.ceil($(this).attr('data-percentage'));
+  $({countNum: 0}).animate({countNum: percentage}, {
+    duration: 2000,
+    easing:'linear',
+    step: function() {
+      
+    var pct = '';
+    if(percentage == 0){
+      pct = Math.floor(this.countNum) + '%';
+    }else{
+      pct = Math.floor(this.countNum+1) + '%';
+    }
+    progress.text(pct) && progress.siblings().children().css('width',pct);
+    }
+  });
+});
+</script>
+
+
+
+
+</html>

@@ -1,0 +1,472 @@
+#container {
+    background-image: url(../ImagenesADN/background.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 1200px;
+    z-index: 1;
+    padding-left:5%;
+    padding-right: 5%;
+}
+#barrausuario {
+    background-color: #0063be;
+    background-image: url(../ImagenesADN/textura-pleca-usuario.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 58px;
+    width: 1200px;
+
+}
+.shadow {
+    -moz-box-shadow: 0px 5px 10px #bababa;
+    -webkit-box-shadow: 0px 5px 10px #bababa;
+    box-shadow: 0px 5px 10px #bababa;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#111111')";
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#111111');
+
+}
+#espaciousuario {
+    text-align: center;
+    height: 26px;
+    width: 180px;
+    position: absolute;
+    z-index: 3;
+    left: 193px;
+    top: 24px;
+}
+#iconousuario {
+    text-align: center;
+    height: 31px;
+    width: 26px;
+    position: absolute;
+    z-index: 2;
+    left: 90px;
+    top: 25px;
+    right: 900px;
+}
+#usuario {
+    font-family: "DIN Alternate Medium";
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    height: 16px;
+    width: 15%;
+    position: absolute;
+    z-index: 5;
+    left: 10%;
+    top: 30px;
+}
+#iconofecha {
+    text-align: center;
+    height: 31px;
+    width: 28px;
+    position: absolute;
+    z-index: 6;
+    left: 954px;
+    top: 25px;
+}
+#fecha {
+    font-family: "DIN Alternate Medium";
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    height: 16px;
+    width: 84px;
+    z-index: 7;
+    position: absolute;
+    left: 992px;
+    top: 30px;
+    right: 957px;
+}
+#iconohora {
+    text-align: center;
+    height: 31px;
+    width: 26px;
+    position: absolute;
+    z-index: 8;
+    top: 25px;
+    left: 1090px;
+}
+#hora {
+    font-family: "DIN Alternate Medium";
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    height: 16px;
+    width: 61px;
+    position: absolute;
+    z-index: 9;
+    top: 30px;
+    left: 1127px;
+}
+#logoadn {
+    text-align: center;
+    height: 98px;
+    width: 116px;
+    position: absolute;
+    z-index: 10;
+    left: 141px;
+    top: 87px;
+}
+#fondomenu {
+    text-align: center;
+    height: 107px;
+    width: 639px;
+    position: absolute;
+    z-index: 11;
+    left: 409px;
+    top: 77px;
+}
+#botondireccion {
+    text-align: center;
+    height: 99px;
+    width: 97px;
+    position: absolute;
+    z-index: 12;
+    left: 410px;
+    top: 78px;
+}
+#botonanalisis {
+    text-align: center;
+    height: 99px;
+    width: 95px;
+    position: absolute;
+    z-index: 13;
+    left: 954px;
+    top: 78px;
+}
+#botongerencia {
+    text-align: center;
+    height: 99px;
+    width: 109px;
+    position: absolute;
+    z-index: 14;
+    top: 78px;
+    left: 511px;
+}
+#botonplaneacion {
+    text-align: center;
+    height: 99px;
+    width: 110px;
+    position: absolute;
+    z-index: 15;
+    top: 78px;
+    left: 623px;
+}
+#botontablero {
+    text-align: center;
+    height: 99px;
+    width: 109px;
+    position: absolute;
+    z-index: 16;
+    left: 736px;
+    top: 78px;
+}
+#botonadmon {
+    text-align: center;
+    height: 99px;
+    width: 105px;
+    position: absolute;
+    z-index: 16;
+    top: 78px;
+    left: 847px;
+}
+#gadgetscontainer {
+    background-color: #eeeeeb;
+    text-align: center;
+    height: 513px;
+    width: 100px;
+    position: absolute;
+    z-index: 16;
+    left: 87%;
+    top: 192px;
+}
+#gadgetsuno {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    z-index: 17;
+}
+#gadgetsdos {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    z-index: 18;
+    top: 464px;
+}
+#gadgetindicadores {
+    text-align: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 20;
+    left: 24px;
+    top: 59px;
+}
+#gadgetgraficas {
+    text-align: center;
+    height: 41px;
+    width: 38px;
+    position: absolute;
+    z-index: 20;
+    left: 34px;
+    top: 152px;
+}
+#alertas {
+    height: auto;
+    overflow: auto;
+    width: 98%;
+    z-index: 3;
+    left: 10px;
+    top: 412px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+#indicadoresconsola {
+    height: auto;
+    overflow: auto;
+    width: 651px;
+    z-index: 3;
+    left: 10px;
+    top: 228px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+#consolareportes {
+    height: auto;
+    overflow: auto;
+    width: 95%;
+    z-index: 3;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+
+.titulodivs {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: #004065;
+    text-align: left;
+    height: 15px;
+    width: 140px;
+
+    z-index: 10;
+    left: 20px;
+    top: 20px;
+    font-style: normal;
+}
+#nombrealertas {
+    position:absolute;
+    width:164px;
+    height:23px;
+    z-index:1;
+    left: 7px;
+    top: 12px;
+    text-align: left;
+}
+#nombrereportes {
+    position:absolute;
+    width:164px;
+    height:23px;
+    z-index:1;
+    left: 17px;
+    top: 16px;
+}
+#nombrereporteventas {
+    position:absolute;
+    width:75px;
+    height:71px;
+    z-index:1;
+    left: 106px;
+    top: 79px;
+}
+#nombrereporteentregas {
+    position:absolute;
+    width:82px;
+    height:71px;
+    z-index:1;
+    left: 106px;
+    top: 190px;
+}
+#nombreindicadores {
+
+    width:242px;
+    height:23px;
+    z-index:1;
+    left: 14px;
+    top: 18px;
+}
+#causas {
+
+    width:144px;
+    height:28px;
+    z-index:11;
+    left: 251px;
+    top: 47px;
+    background-image: url(../ImagenesADN/espacio-causas-riesgos.png);
+    padding-top:8px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.causasriesgos {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: afafa6;
+    opacity:0.5;
+}
+.cajatextocausariesgo {
+    font-family: DIN;
+    font-size: 13px;
+    font-weight: normal;
+    color: #003050;
+    text-align: left;
+    padding-left:10px;
+    padding-top:10px;
+}
+#riesgos {
+
+    width:144px;
+    height:28px;
+    z-index:12;
+    top:47px;
+    left: 470px;
+    background-image: url(../ImagenesADN/espacio-causas-riesgos.png);
+    background-repeat: no-repeat;
+    padding-top: 8px;
+}
+#iconosalertas {
+
+    width:157px;
+    height:111px;
+    z-index:13;
+    left: 43px;
+    top: 123px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+#indicador {
+
+    width:82px;
+    height:56px;
+    z-index:14;
+}
+#textoentregas {
+
+    width:75px;
+    height:15px;
+    z-index:15;
+    left: 15px;
+    top: 80px;
+}
+#alertaverde {
+
+    width:22px;
+    height:22px;
+    z-index:16;
+    left: 121px;
+    top: 20px;
+}
+#cajatextocausas {
+
+    width:190px;
+    height:190px;
+    z-index:14;
+    left: 229px;
+    top: 96px;
+}
+#cajatextoriesgo {
+
+    width:190px;
+    height:190px;
+    z-index:14;
+    left: 439px;
+    top: 96px;
+    text-align: center;
+}
+
+#apDiv2 {
+
+    width:200px;
+    height:115px;
+    z-index:1;
+}
+#reporteventas {
+
+    width:60px;
+    height:70px;
+    z-index:22;
+    left: 33px;
+    top: 77px;
+}
+#apDiv3 {
+
+    width:200px;
+    height:115px;
+    z-index:23;
+}
+#apDiv4 {
+
+    width:200px;
+    height:115px;
+    z-index:23;
+}
+#reporteentregas {
+
+    width:60px;
+    height:70px;
+    z-index:23;
+    left: 34px;
+    top: 191px;
+}
+#apDiv5 {
+
+    width:200px;
+    height:115px;
+    z-index:24;
+}
+
+#divtotal {
+   height: auto;
+    overflow: auto;
+    width: 100%;
+    z-index: 3;
+    left: 10px;
+    top: 228px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f6f6;
+}
+
+.cajatextocausariesgo {
+    font-family: DIN;
+    font-size: 13px;
+    font-weight: normal;
+    color: #003050;
+}
+
+.causasriesgos {
+    font-family: "DIN Alternate Medium";
+    font-size: 16px;
+    font-weight: normal;
+    color: afafa6;
+    opacity:0.5;
+}
+
+.titulodivs {
+    font-family: "DIN Alternate Medium";
+    font-size: 25px;
+    font-weight: normal;
+    color: #004065;
+    text-align: left;
+    font-style: normal;
+}

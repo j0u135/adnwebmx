@@ -1,0 +1,675 @@
+body {
+	background: url(images/fondo.jpg) center top repeat;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.centro {
+	text-align: center;
+}
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	background: #FFFFFF;
+}
+
+.clear {
+	width: 100%;
+	clear: both;
+	height: 10px;
+}
+
+#header {
+	background: #cfd1d2;
+	-webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+.topbar {
+	height: 67px;
+	background: url(images/topbar.png) center top repeat-x;
+	color: #FFFFFF;
+}
+
+.cabecera {
+	margin-top: -18px;
+	padding: 0px;
+}
+
+#menu {
+	float: right;
+	width: 70%;
+	margin-top: 1px;
+}
+
+#menutop {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#menu div {
+	display: inline;
+	width: 116px;
+	height: 113px;
+	position: relative;
+	overflow: hidden;
+	float: right;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+#menu div:hover {
+	-webkit-box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#menu img {
+	position: absolute;
+}
+
+.logo {
+	text-align: center;
+	padding: 11px 0;
+}
+
+#contenido {
+	padding: 10px;
+	height: 610px;
+	background: url(images/adn.png) center center no-repeat;
+	position: relative;
+}
+
+#contenidosub {
+	padding: 10px;
+	height: 610px;
+	position: relative;
+}
+
+.inteligent {
+	margin-top: 60px;
+	text-align: center;
+}
+
+.planeacion {
+	position: absolute;
+	top: 175px;
+	left: 136px;
+}
+
+.monitoreo {
+	position: absolute;
+	top: 238px;
+	left: 461px;
+}
+
+.analisis {
+	position: absolute;
+	top: 310px;
+	left: 774px;
+}
+
+.tituloindex {
+	color: #d10330;
+}
+
+#planeaciontitulo {
+	position: absolute;
+	top: 365px;
+	left: 136px;
+	width: 122px;
+	display: none;
+}
+
+#monitoreotitulo {
+	position: absolute;
+	top: 435px;
+	left: 461px;
+	display: none;
+}
+
+#analisistitulo {
+	position: absolute;
+	top: 515px;
+	left: 774px;
+	width: 130px;
+	display: none;
+}
+
+#flechaizq {
+	position: absolute;
+	top: 207px;
+	left: 0;
+	height: 216px;
+	width: 94px;
+	cursor: pointer;
+}
+
+#flechaizq img {
+	display: none;
+}
+
+#flechader {
+	position: absolute;
+	top: 207px;
+	right: 0;
+	height: 216px;
+	width: 94px;
+	cursor: pointer;
+}
+
+#flechader img {
+	display: none;
+}
+
+#planeacionindex {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+#monitoreoindex {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+#analisisindex {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+.transition {
+    -webkit-transform: scale(1.1); 
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sombramenu {
+	-webkit-box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#direccionwrapper {
+	padding: 20px 10px 10px 10px;
+	position: relative;
+}
+
+.col-izq {
+	width: 704px;
+	float: left;
+}
+
+.col-der {
+	width: 300px;
+	float: right;
+}
+
+.tablaframe {
+	margin-top: 15px;
+}
+
+.consolawrapper {
+	background: #939598;
+	margin: -22px 6px 0 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 28px;
+}
+
+#gadgets {
+	background: url(images/direccion/iconosfondo.png) center top no-repeat;
+	width: 268px;
+	height: 201px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#mailgadget {
+	position: absolute;
+	top: 31px;
+	left: 112px;
+}
+
+#calendargadget {
+	position: absolute;
+	top: 31px;
+	left: 161px;
+}
+
+#drivergadget {
+	position: absolute;
+	top: 73px;
+	left: 87px;
+}
+
+#vaciogadget1 {
+	position: absolute;
+	top: 73px;
+	left: 136px;
+}
+
+#vaciogadget2 {
+	position: absolute;
+	top: 115px;
+	left: 65px;
+}
+
+#vaciogadget3 {
+	position: absolute;
+	top: 115px;
+	left: 112px;
+}
+
+.zplus {
+	z-index: 1;
+}
+
+.reportestitulo {
+	width: 282px;
+	margin: 0 auto;
+}
+
+.reporteswrapper {
+	background: #939598;
+	margin: -22px 14px 0 15px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.margenalto {
+	margin-top: 30px;
+}
+
+#consola.margenalto {
+	margin-top: 48px;
+}
+
+.reporteentregas {
+	padding-top: 40px;
+	padding-left: 30px;
+	padding-bottom: 69px;
+}
+
+.reporteventas {
+	padding-left: 30px;
+	padding-bottom: 69px;
+}
+
+#gadgets img:hover {
+	z-index: 1;
+}
+
+/* TABLERO */
+
+.invisible {
+	display: none;
+}
+
+#ingresodiv {
+	position: absolute;
+	top: 218px;
+	left: 458px;
+	cursor: pointer;
+}
+
+#cobranzadiv {
+	position: absolute;
+	top: 135px;
+	left: 410px;
+}
+
+#ventasdiv {
+	position: absolute;
+	top: 304px;
+	left: 410px;
+}
+
+#estadodiv {
+	position: absolute;
+	top: 219px;
+	left: 556px;
+}
+
+.textotablero {
+	color: #a81e20;
+	font-size: 15px;
+	font-weight: bold;
+	display: none;
+}
+
+#cobranzatitulo {
+	position: absolute;
+	top: 125px;
+	left: 485px;
+}
+
+#estadotitulo {
+	position: absolute;
+	top: 246px;
+	left: 670px;
+}
+
+#ventastitulo {
+	position: absolute;
+	top: 410px;
+	left: 490px;
+}
+
+#entregasdiv {
+	position: absolute;
+	left: 366px;
+	top: 48px;
+}
+
+#facturaciondiv {
+	position: absolute;
+	top: 142px;
+	left: 310px;
+}
+
+#contratosdiv {
+	position: absolute;
+	top: 311px;
+	left: 310px;
+}
+
+#unidadesvendidasdiv {
+	position: absolute;
+	top: 403px;
+	left: 366px;
+}
+
+#costodiv {
+	position: absolute;
+	top: 131px;
+	left: 611px;
+}
+
+#gastodiv {
+	position: absolute;
+	top: 317px;
+	left: 613px;
+}
+
+#entregastitulo {
+	position: absolute;
+	top: 87px;
+	left: 280px;
+}
+
+#facturaciontitulo {
+	position: absolute;
+	top: 182px;
+	left: 198px;
+}
+
+#contratostitulo {
+	position: absolute;
+	top: 351px;
+	left: 212px;
+}
+
+#unidadesvendidastitulo {
+	position: absolute;
+	top: 434px;
+	left: 292px;
+}
+
+#costotitulo {
+	position: absolute;
+	top: 172px;
+	left: 708px;
+}
+
+#gastotitulo {
+	position: absolute;
+	top: 357px;
+	left: 709px;
+}
+
+#promocionesdiv {
+	position: absolute;
+	top: 272px;
+	left: 240px;
+}
+
+#visitasdiv {
+	position: absolute;
+	top: 369px;
+	left: 240px;
+}
+
+#rpvdiv {
+	position: absolute;
+	top: 436px;
+	left: 188px;
+}
+
+#comprasdiv {
+	position: absolute;
+	top: 90px;
+	left: 700px;
+}
+
+#inventariodiv {
+	position: absolute;
+	top: 190px;
+	left: 700px;
+}
+
+#presupuestodiv {
+	position: absolute;
+	top: 279px;
+	left: 700px;
+}
+
+#postventadiv {
+	position: absolute;
+	top: 376px;
+	left: 700px;
+}
+
+#gastopromocionesdiv {
+	position: absolute;
+	top: 420px;
+	left: 623px;
+}
+
+#promocionestitulo {
+	position: absolute;
+	top: 302px;
+	left: 126px;
+}
+
+#visitastitulo {
+	position: absolute;
+	top: 400px;
+	left: 180px;
+}
+
+#rpvtitulo {
+	position: absolute;
+	top: 478px;
+	left: 152px;
+}
+
+#comprastitulo {
+	position: absolute;
+	top: 119px;
+	left: 775px;
+}
+
+#inventariotitulo {
+	position: absolute;
+	top: 222px;
+	left: 775px;
+}
+
+#presupuestotitulo {
+	position: absolute;
+	top: 309px;
+	left: 775px;
+}
+#postventatitulo {
+	position: absolute;
+	top: 406px;
+	left: 775px;
+}
+
+#gastopromocionestitulo {
+	position: absolute;
+	top: 505px;
+	left: 605px;
+}
+
+.tablero2 img {
+	display: none;
+}
+
+.tablero3 img {
+	display: none;
+}
+
+#ejemplo1, #ejemplo2 {
+	display: none;
+}
+
+area {
+	cursor: pointer;
+	display: block;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+	text-align: center;
+}
+
+.ui-dialog .ui-dialog-title {
+	float: none;
+	font-size: 12px;
+}
+
+/* ANALISIS DE CONTENIDO */
+
+.analisiscontenido {
+	text-align: center;
+	padding: 80px 0;
+}
+
+.analisiscontenido img {
+	margin: 0 20px;
+	cursor: pointer;
+}
+
+/* DESEMPEÑO */
+
+.desempenowrap img {
+	cursor: pointer;
+}
+
+#direcciondes {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -61px;
+	margin-top: -71px;
+}
+
+#logisticades {
+	position: absolute;
+	top: 116px;
+	left: 381px;
+}
+
+#gerenciades {
+	position: absolute;
+	top: 116px;
+	left: 519px;
+}
+
+#administraciondes {
+	position: absolute;
+	top: 368px;
+	left: 381px;
+}
+
+#ventasdes {
+	position: absolute;
+	top: 368px;
+	left: 519px;
+}
+
+.titulodes {
+	font-size: 35px;
+	color: #000000;
+	font-weight: 300;
+	position: absolute;
+	display: none;
+}
+
+#direcciondestitulo {
+	top: 293px;
+	left: 590px;
+}
+
+#logisticadestitulo {
+	top: 164px;
+	left: 235px;
+}
+
+#gerenciadestitulo {
+	top: 164px;
+	left: 655px;
+}
+
+#administraciondestitulo {
+	top: 415px;
+	left: 148px
+}
+
+#ventasdestitulo {
+	top: 415px;
+	left: 655px;
+}
+
+.direccionsub {
+	position: absolute;
+}
+
+.direccionsub img {
+	display: none;
+}
+
+#rodrigo {
+	left: 583px;
+	top: 225px;
+}
+
+#juan {
+	top: 77px;
+	left: 661px;
+}
+
+#ponciano {
+	top: 372px;
+	left: 661px;
+}
