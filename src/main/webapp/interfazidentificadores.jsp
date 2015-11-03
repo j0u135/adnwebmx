@@ -19,7 +19,7 @@
 	<link href="css/primitives.latest.css?207" media="screen" rel="stylesheet" type="text/css" />
 
 
-	<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery-ui-1.10.2.custom.js"></script>
 	<script type="text/javascript" src="js/primitives.min.js?207"></script>
 	<script type="text/javascript" src="js/angular.js"></script>

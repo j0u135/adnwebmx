@@ -18,7 +18,7 @@
     
     <script src="js/jquery.min.js"></script>  
     <script src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery/jquery-ui-1.10.2.custom.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/primitives.min.js?207"></script>
