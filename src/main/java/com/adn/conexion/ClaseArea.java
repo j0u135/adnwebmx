@@ -42,9 +42,9 @@ System.out.println(query);
 	   if(con!=null){
 	    Statement st;
 	    st = con.createStatement();
-System.out.println(query);
 	    String query= "UPDATE Areas SET area='"+nom+"' WHERE area='"+area.getArea()+"'";
-	   // 
+	    System.out.println(query);
+ // 
 	    st.executeUpdate(query);
 	    
 	    agregado=true;
